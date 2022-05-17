@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <!-- fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;200;300;400;500;600;700&family=Outfit:wght@100&family=Poppins:wght@100&display=swap" 
+  rel="stylesheet">
+  
+  <!-- main styles -->
+  <link rel="stylesheet" type="text/css" href="./styles.css" />
+
+  <title>Shoe-fy</title>
+
+
+</head>
+<body>
+  
+  <main class="shoefy-container">
+    <nav class="navigation">
+      <div class="nav-container">
+        <div class="logo">
+          <img alt="Shoe-fy Logo" src="./images/logo.svg" />
+        </div>
+        <div class="links">
+          <ul>
+            <li><a href="#">Collections</a></li>
+            <li><a href="#">Men</a></li>
+            <li><a href="#">Women</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="other">
+        <div class="cart-info">
+          <img alt="cart image" src="./images/icon-cart.svg" />
+        </div>
+        <div class="profile">
+          <img alt="profile image" src="./images/image-avatar.png" />
+        </div>
+      </div>
+    </nav>
+
+    <section class="shopping-container">
+      <article class="product-preview">
+        <div class="main-image">
+          <img src="./images/image-product-1.jpg" alt="" id="main-product-image">
+        </div>
+        <div class="small-img-list">
+          <img src="./images/image-product-1-thumbnail.jpg" alt="thumbnail-1" class="active" 
+            onclick="changeImage(1)" id="thumbnail1"
+          />
+          <img src="./images/image-product-2-thumbnail.jpg" alt="thumbnail-2" class="" 
+           onclick="changeImage(2)" id="thumbnail2"
+          />
+          <img src="./images/image-product-3-thumbnail.jpg" alt="thumbnail-3" class="" 
+           onclick="changeImage(3)" id="thumbnail3"
+          />
+          <img src="./images/image-product-4-thumbnail.jpg" alt="thumbnail-4" class="" 
+           onclick="changeImage(4)" id="thumbnail4"
+          />
+        </div>
+      </article>
+      <article class="product">
+        <div class="product-details">
+          <div class="brand-title">
+            <h4>Sneaker Company</h4>
+          </div>
+          <div class="product-name">
+            <h1>Fall Limited Edition Sneakers</h1>
+          </div>
+          <div class="product-info">
+            These low-profile sneakers are your perfect casual wear companion. Featuring a 
+            durable rubber outer sole, they’ll withstand everything the weather can offer.
+          </div>
+        </div>
+        <div class="pricing">
+          <span class="discount-price">$125.00</span>
+          <span class="discount-rate">50%</span>
+          <div class="original-price">
+            <span>$250.00</span>
+          </div>
+        </div>
+        <div class="cart">
+          <div class="quantity">
+            <div class="remove" onclick="decrement()">
+              <img src="./images/icon-minus.svg" alt="" class="remove">
+            </div>
+            <!-- <div class="qty"></div> -->
+            <input type="number" id="qty" value=1 class="qty" readonly max="30" />
+            <div class="add-more" onclick="increment()">
+              <img src="./images/icon-plus.svg" alt="" class="addmore">
+            </div>
+          </div>
+          <div class="addcart">
+            <button class="addtocart">
+              <img alt="cart image" src="./images/icon-cart-white.svg" />
+              Add to cart
+            </button>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+  <script src="./script.js" type="text/javascript"></script>
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {}
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script>
+</body>
+</html>
